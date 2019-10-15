@@ -42,8 +42,7 @@ public class MultilevelInheritance
 		 * When we create an object of ClassB,
 		 * firstly called the default constructor of ClassA
 		 * then call its own default constructor.
-		 * Here, object 'b' can access all public entity of ClassA
-		 * and it also can access the protected entity of ClassB if they remain in same package.
+		 * Here, object 'b' can access all public and protected entity of ClassA
 		 */
 		ClassB b = new ClassB();
 		b.publicMethodOfClassA();
@@ -57,8 +56,7 @@ public class MultilevelInheritance
 		 * (i) Firstly called the default constructor of ClassA
 		 * (ii) Secondly called the default constructor of ClassB
 		 * (iii) Finally called the  default constructor of ClassC
-		 * Object 'c' can access all the public entity of ClassA and ClassB.
-		 * Protected entity can be access if they remain in same package.
+		 * Object 'c' can access all the public and protected entity of ClassA and ClassB.
 		 */
 		ClassC c = new ClassC();
 		c.publicMethodOfClassA();
@@ -114,7 +112,7 @@ class ClassA
 	
 	/*
 	 * Protected method of ClassA.
-	 * This method is visible to it's child class when they are in same package.
+	 * This method is also visible to it's child class.
 	 */
 	protected void protectedMethodOfClassA() {
 		System.out.println("This is protected methode of ClassA");
@@ -151,7 +149,7 @@ class ClassB extends ClassA
 	
 	/*
 	 * Protected method of ClassB.
-	 * This method is visible to it's child class when they are in same package.
+	 * This method is also visible to it's child class.
 	 */
 	protected void protectedMethodOfClassB() {
 		System.out.println("This is protected methode of ClassB");
